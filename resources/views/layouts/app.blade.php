@@ -76,11 +76,11 @@
         <div class="container-flex">
 <div class="row">
 
-    <div class="col-3">
-<ul>
+    <div class="col-3" style="margin-top: 30px">
+<ul class="list-group">
          @if(count($usermenu) >= 1)
 @foreach ($usermenu as $Link => $MenuItem)
-    <a href="{{$Link}}"><li>{{$MenuItem}}</li></a>
+    <a style="" href="{{$Link}}"><li class="list-group-item" style="list-style-type: none;padding:5px;margin-left:20px">{{$MenuItem}}</li></a>
 @endforeach
          @endif
 </ul>
