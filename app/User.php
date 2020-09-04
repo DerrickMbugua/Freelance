@@ -47,7 +47,7 @@ class User extends Authenticatable
     }
 
     //Job relationship
-    public function job(){
+    public function jobs(){
         return $this->hasMany('App\Job','user_id');
     }
 }
