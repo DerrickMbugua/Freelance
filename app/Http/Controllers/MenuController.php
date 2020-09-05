@@ -17,11 +17,13 @@ class MenuController extends Controller
             $Menu['/home']='Dashboard';
 
             if($User->hasRole('Client')){
-$Menu['/postjob']='Post a Job';
+$Menu['/postjob']='Post a New Job';
+$Menu['/jobs']='My Jobs';
             }
 
             if($User->hasRole('Freelancer')){
 $Menu['/findjob']='Find a Job';
+$Menu['/profile']='Profile';
             }
         }
 

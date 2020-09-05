@@ -21,7 +21,14 @@ class PostjobController extends Controller
 
        $User = Auth::user();
        $User->jobs()->save($job);
+       $req->session()->flash('status','The Job was created successfully');
 
-       return redirect('/home')->with('success','The job was created successfully');
+       return redirect('/jobs');
+    }
+    public function list(){
+        $User=Auth::user();
+        $Jobs=$User->jobs->all();
+//return Job::all();
+        return view('jobs',["Jobs"=>$Jobs]);
     }
 }

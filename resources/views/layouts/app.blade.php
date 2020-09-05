@@ -15,6 +15,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -76,7 +77,7 @@
         <div class="container-flex">
 <div class="row">
 
-    <div class="col-3" style="margin-top: 30px">
+    <div class="col-2" style="margin-top: 30px">
 <ul class="list-group">
          @if(count($usermenu) >= 1)
 @foreach ($usermenu as $Link => $MenuItem)
@@ -86,13 +87,13 @@
 </ul>
     </div>
 
-    <div class="col-6">
+    <div class="col-8">
         <main class="py-4">
             @yield('content')
         </main>
     </div>
 
-    <div class="col-3">
+    <div class="col-2">
 
     </div>
 

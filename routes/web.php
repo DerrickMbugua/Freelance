@@ -22,3 +22,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::view('/postjob','postjob');
 Route::post('postjob','PostjobController@index');
+Route::get('/jobs','PostjobController@list');
