@@ -33,7 +33,8 @@
                             <td>${{$Job->budget}}</td>
                             <td>{{$Job->description}}</td>
                             <td>{{$Job->delivery_date}}</td>
-                            <td><a href="/deletejobs"><i class="fa fa-trash"></i>
+                            <td><a href="/deletejobs/{{$Job->id}}"><i class="fa fa-trash" style="color: red"></i></a>
+                              <a href="/editjobs/{{$Job->id}}"><i class="fa fa-edit" style="margin-left: 20px"></i></a>
                               </td>
                           </tr>
                           @endforeach

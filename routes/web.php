@@ -23,3 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::view('/postjob','postjob');
 Route::post('postjob','PostjobController@index');
 Route::get('/jobs','PostjobController@list');
+Route::get('/deletejobs/{id}','PostjobController@delete');
+Route::get('/editjobs/{id}','PostjobController@edit');
+Route::post('editjob','PostjobController@update');
