@@ -61,4 +61,19 @@ class PostjobController extends Controller
  
         return redirect('/jobs');
     }
+
+    public function show(){
+    // $User=Auth::user();
+   // $vacanies=$User->jobs->all();
+//return Job::all();
+$vacanies=Job::all();
+    return view('findjob',["vacanies"=>$vacanies]);
+  }
+
+  public function apply($id){
+    $apply= Job::find($id);
+    return view('applyjob',['apply'=>$apply]);
+}
+
+
 }

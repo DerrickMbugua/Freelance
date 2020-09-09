@@ -26,3 +26,5 @@ Route::get('/jobs','PostjobController@list');
 Route::get('/deletejobs/{id}','PostjobController@delete');
 Route::get('/editjobs/{id}','PostjobController@edit');
 Route::post('editjob','PostjobController@update');
+Route::get('/findjob','PostjobController@show');
+Route::get('/applyjob/{id}','PostjobController@apply');
