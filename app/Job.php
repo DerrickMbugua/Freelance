@@ -11,4 +11,10 @@ class Job extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+    //proposal relationship
+    public function proposals(){
+        return $this->hasMany('App\Proposal','job_id');
+    }
+        
+    
 }

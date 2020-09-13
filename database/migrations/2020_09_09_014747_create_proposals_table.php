@@ -15,6 +15,10 @@ class CreateProposalsTable extends Migration
     {
         Schema::create('proposals', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('job_id');
+    $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+    $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->mediumText('proposal_text');
             $table->integer('bid');
             $table->date('delivery_date');

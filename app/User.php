@@ -50,4 +50,9 @@ class User extends Authenticatable
     public function jobs(){
         return $this->hasMany('App\Job','user_id');
     }
+
+    //Proposal Relationship
+    public function proposals(){
+        return $this->hasMany('App\Proposal','user_id');
+    }
 }

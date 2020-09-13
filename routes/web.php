@@ -28,3 +28,4 @@ Route::get('/editjobs/{id}','PostjobController@edit');
 Route::post('editjob','PostjobController@update');
 Route::get('/findjob','PostjobController@show');
 Route::get('/applyjob/{id}','PostjobController@apply');
+Route::post('applyjob','ProposalController@index');

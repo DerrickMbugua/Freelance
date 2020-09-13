@@ -17,15 +17,19 @@
                     <form action="/applyjob" method="POST" enctype="multipart/form-data">
                         
                         @csrf
+                   <!--     <div class="form-group">
+                            <label>Job Owner</label>
+                            <input type="text" name="job_id" class="form-control" value="{{$apply->id}}">
+                          </div>-->
                         <div class="form-group">
-                            <input type="hidden" name="id" class="form-control">
+                            <input type="hidden" name="job_id" class="form-control" value="{{$apply->id}}">
                             <label>Proposal</label>
-                            <textarea class="form-control" name="description" placeholder="Job Description" rows="3"></textarea>
+                            <textarea class="form-control" name="proposal_text" placeholder="Proposal Text" rows="3"></textarea>
                           </div>
                       
                         <div class="form-group">
                           <label>Bid</label>
-                          <input type="number" name="budget" class="form-control" placeholder="$">
+                          <input type="number" name="bid" class="form-control" placeholder="$">
                         </div>
                         <div class="form-group">
                             <label>Delivery date</label>
