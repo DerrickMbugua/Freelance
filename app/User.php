@@ -55,4 +55,9 @@ class User extends Authenticatable
     public function proposals(){
         return $this->hasMany('App\Proposal','user_id');
     }
+
+    //profile
+    public function profile(){
+        return $this->hasOne('App\Profile');
+    }
 }

@@ -16,6 +16,7 @@
                     @endif
                     <table class="table">
                         <thead>
+                       
                           <tr>
                             
                             <th scope="col">Job Title</th>
@@ -23,7 +24,9 @@
                             <th scope="col">Description</th>
                             <th scope="col">Delivery Date</th>
                             <th scope="col">Operation</th>
+                            <th scope="col"></th>
                           </tr>
+                          
                         </thead>
                         <tbody>
                             @foreach($Jobs as $Job)
@@ -36,6 +39,7 @@
                             <td><a href="/deletejobs/{{$Job->id}}"><i class="fa fa-trash" style="color: red"></i></a>
                               <a href="/editjobs/{{$Job->id}}"><i class="fa fa-edit" style="margin-left: 20px"></i></a>
                               </td>
+                              <td><a href="/proposal/{{$Job->id}}"><input type="button" value="Proposals"></a></td>
                           </tr>
                           @endforeach
                         </tbody>

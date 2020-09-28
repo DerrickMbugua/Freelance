@@ -87,15 +87,15 @@
 </ul>
     </div>
 
-    <div class="col-8">
+    <div class="col-9">
         <main class="py-4">
             @yield('content')
         </main>
     </div>
 
-    <div class="col-2">
+ <!--   <div class="col-2">
 
-    </div>
+    </div>-->
 
 </div>
 

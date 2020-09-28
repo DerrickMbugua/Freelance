@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Job;
+use App\Proposal;
 use \Auth;
 use Session;
 
@@ -29,8 +30,10 @@ class PostjobController extends Controller
     public function list(){
         $User=Auth::user();
         $Jobs=$User->jobs->all();
+        $prop=Proposal::all();
+        
 //return Job::all();
-        return view('jobs',["Jobs"=>$Jobs]);
+        return view('jobs')->with('Jobs',$Jobs)->with('prop',$prop);
     }
 
     public function delete($id){
@@ -74,6 +77,7 @@ $vacanies=Job::all();
     $apply= Job::find($id);
     return view('applyjob',['apply'=>$apply]);
 }
+
 
 
 }

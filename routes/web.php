@@ -29,3 +29,6 @@ Route::post('editjob','PostjobController@update');
 Route::get('/findjob','PostjobController@show');
 Route::get('/applyjob/{id}','PostjobController@apply');
 Route::post('applyjob','ProposalController@index');
+Route::get('/proposal/{id}','ProposalController@list');
+Route::get('/profile','ProfileController@show');
+Route::post('profile','ProfileController@create');

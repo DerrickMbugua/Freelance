@@ -12,7 +12,7 @@ class Job extends Model
         return $this->belongsTo('App\User');
     }
     //proposal relationship
-    public function proposals(){
+    public function proposal(){
         return $this->hasMany('App\Proposal','job_id');
     }
         

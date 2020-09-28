@@ -8,7 +8,7 @@ use \Auth;
 
 class ProposalController extends Controller
 {
-    //
+    //create proposal
     public function index(Request $req){
         //return $req->input();
         $proposal=new Proposal;
@@ -21,5 +21,11 @@ class ProposalController extends Controller
        $req->session()->flash('status','Proposal sent');
 
        return redirect('/findjob');
+    }
+//show the number of proposal in the client side
+    public function list($id){
+        $list=Proposal::find($id)->where('job_id',$id)->get();
+       return view('proposal',['list'=>$list]);
+       //return $list;
     }
 }
