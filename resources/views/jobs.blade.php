@@ -39,7 +39,10 @@
                             <td><a href="/deletejobs/{{$Job->id}}"><i class="fa fa-trash" style="color: red"></i></a>
                               <a href="/editjobs/{{$Job->id}}"><i class="fa fa-edit" style="margin-left: 20px"></i></a>
                               </td>
+                             
+   
                               <td><a href="/proposal/{{$Job->id}}"><input type="button" value="Proposals"></a></td>
+                             
                           </tr>
                           @endforeach
                         </tbody>

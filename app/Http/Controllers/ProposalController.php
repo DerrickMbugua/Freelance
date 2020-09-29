@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Proposal;
+use App\Profile;
 use \Auth;
 
 class ProposalController extends Controller
@@ -25,7 +26,8 @@ class ProposalController extends Controller
 //show the number of proposal in the client side
     public function list($id){
         $list=Proposal::find($id)->where('job_id',$id)->get();
-       return view('proposal',['list'=>$list]);
-       //return $list;
+       //$profile=Profile::find($userid)->get();
+       return view('proposal')->with('list',$list);
     }
+    
 }

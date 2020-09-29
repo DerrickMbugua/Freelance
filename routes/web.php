@@ -32,3 +32,4 @@ Route::post('applyjob','ProposalController@index');
 Route::get('/proposal/{id}','ProposalController@list');
 Route::get('/profile','ProfileController@show');
 Route::post('profile','ProfileController@create');
+Route::get('/profile/{id}','ProfileController@profile');

@@ -32,4 +32,10 @@ return view('profile')->with('show',$show);
         $req->session()->flash('status','Profile has been created successfully');
         return redirect('profile');
     }
+
+    //view profile on client side
+    public function profile($id){
+$profile=Profile::where('user_id',$id)->get();
+return view('viewprofile',['profile'=>$profile]);
+    }
 }
