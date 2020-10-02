@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Role;
+use App\Country;
 
 class RegisterController extends Controller
 {
@@ -55,6 +56,9 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' => ['required','integer'],
+            'country' => ['required', 'string',],
+            'last_name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255', 'unique:users'],
         ]);
     }
 
@@ -71,7 +75,9 @@ class RegisterController extends Controller
         $User->name=$data['name'];
         $User->email=$data['email'];
         $User->password=Hash::make($data['password']);
-
+        $User->country=$data['country'];
+        $User->last_name=$data['last_name'];
+        $User->username=$data['username'];
         $Role=Role::find($data['role']);
         $Role->users()->save($User);
         
@@ -88,6 +94,7 @@ class RegisterController extends Controller
         }else{
             $RoleOptions[0]='No Roles Found';
         }
-        return view('auth.register')->with('RoleOptions',$RoleOptions);
+        $countries=Country::all();
+        return view('auth.register')->with('RoleOptions',$RoleOptions)->with('countries',$countries);
     }
 }
