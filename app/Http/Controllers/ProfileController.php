@@ -36,6 +36,7 @@ return view('profile')->with('show',$show);
     //view profile on client side
     public function profile($id){
 $profile=Profile::where('user_id',$id)->get();
-return view('viewprofile',['profile'=>$profile]);
+$name=User::where('id',$id)->get();
+return view('viewprofile',['profile'=>$profile])->with('name',$name);
     }
 }

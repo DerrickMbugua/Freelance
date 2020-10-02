@@ -10,9 +10,8 @@ use Session;
 
 class PostjobController extends Controller
 {
-    //
+    //store jobs
     public function index(Request $req){
-       // echo "Hello";
        $job=new Job;
        $job->title=$req->title;
        $job->description=$req->description;
@@ -27,29 +26,27 @@ class PostjobController extends Controller
 
        return redirect('/jobs');
     }
+    //list jobs
     public function list(){
         $User=Auth::user();
         $Jobs=$User->jobs->all();
         $prop=Proposal::all();
-        
-//return Job::all();
         return view('jobs')->with('Jobs',$Jobs)->with('prop',$prop);
     }
-
+//delete jobs
     public function delete($id){
         Job::find($id)->delete();
         Session::flash('status','The Job has been deleted successfully');
        return redirect('/jobs');
     }
-
+//edit jobs
     public function edit($id){
         $edit= Job::find($id);
         return view('editjob',['edit'=>$edit]);
     }
-
+//update jobs
     public function update(Request $req)
     {
-        //return $req->input();
         $job=Job::find($req->id);
        $job->title=$req->title;
      $job->description=$req->description;

@@ -13,23 +13,31 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                  
+                    
+                    
+                
                     <table class="table">
                         <thead>
                           <tr>
+                            <th scope="col">Name</th>
                             <th scope="col">Overview</th>
-                            <th scope="col">English Proficiency</th>
+                            <th scope="col">English proficiency</th>
                             <th scope="col">Experience level</th>
-                            <th scope="col">Hourly_rate</th>
+                            <th scope="col">Hourly rate</th>
+                            <th scope="col">Message</th>
                           </tr>
                         </thead>
                         <tbody>
                             @foreach ($profile as $item)  
                           <tr>
+                            @foreach ($name as $i)
+                            <td>{{$i->name}}</td>
+                            @endforeach
                             <td>{{$item->overview}}</td>
                             <td>{{$item->english_proficiency}}</td>
                             <td>{{$item->experience_level}}</td>
                             <td>${{$item->hourly_rate}}/ hour</td>
+                            <td><a href=""><input type="button" value="Message"></a></td>
 
                           </tr>
                           @endforeach
